@@ -10,8 +10,7 @@
 \-floor_bottom_spread_chance             0          // 1/N chance of a spreadable floor spreading to its bottom (default = 5)
 \-max_liquid_particles                   2000       // Maximum number of liquid drops that can be created until no more liquid rooms are allowed
 \-flagged_liquid_rooms                   7          // Number of random rooms that will be flagged for being eligible to spawn liquid
-\-background_chance 0						// 1/N chance of putting a wall background where it fits (default = 1)
-//\-ground_background_chance 1				// 1/N chance of putting a ground background where it fits (default = 1)
+\-background_chance                      0          // 1/N chance of putting a wall background where it fits (default = 1)
 
 \?stone_floor                      +
 \?cursed_pot                       u
@@ -362,7 +361,7 @@ XXXXXXXXXX
 \.setroom7_1   // babylon
 ////////////////////////////////////////////////////////////////////////////////
 
-0000XX03!5
+0000XX03!0
 XXXXXXXXXX
 0000000000
 0000000000
@@ -375,7 +374,7 @@ XXXXXXXXXX
 \.setroom7_2   // babylon
 ////////////////////////////////////////////////////////////////////////////////
 
-0800000000
+0000000000
 XXXXXXXXXX
 0000000000
 0000000000
