@@ -1,6 +1,6 @@
 meta = {
     name = 'Jetpack Challenge',
-    version = '1.0',
+    version = '1.1',
     description = 'See how high you can fly',
     author = 'JayTheBusinessGoose',
 }
