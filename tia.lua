@@ -35,10 +35,14 @@ end
 tia.load_level = function()
     if level_state.loaded then return end
     level_state.loaded = true
+    local laser_timer = 0
+    if options["disable_lasers"] then
+        laser_timer = 1000000
+    end
     level_state.callbacks[#level_state.callbacks+1] = set_pre_tile_code_callback(function(x, y, layer)
         local euid = spawn_entity(ENT_TYPE.FLOOR_HORIZONTAL_FORCEFIELD, x, y, layer, 0, 0)
         local e = get_entity(euid)
-        e.timer = 120
+        e.timer = 120 + laser_timer
         e.flags = clr_flag(e.flags, ENT_FLAG.FACING_LEFT)
         return true
     end, "forcefield_left")
@@ -51,7 +55,7 @@ tia.load_level = function()
     level_state.callbacks[#level_state.callbacks+1] = set_pre_tile_code_callback(function(x, y, layer)
         local euid = spawn_entity(ENT_TYPE.FLOOR_HORIZONTAL_FORCEFIELD, x, y, layer, 0, 0)
         local e = get_entity(euid)
-        e.timer = 60
+        e.timer = 60 + laser_timer
         e.flags = set_flag(e.flags, ENT_FLAG.FACING_LEFT)
         return true
     end, "forcefield_right")
